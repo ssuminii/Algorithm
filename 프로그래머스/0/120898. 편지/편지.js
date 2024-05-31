@@ -1,3 +1,3 @@
 function solution(message) {
-    return [...message].length * 2;
+    return message.length * 2;
 }
