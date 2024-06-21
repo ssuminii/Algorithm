@@ -8,8 +8,8 @@ function solution(bandage, health, attacks) {
 
         for (let j = 0; j < attacks.length; j++) {
             if (i === attacks[j][0]) {
-                health -= attacks[j][1];
                 attacked = true;
+                health -= attacks[j][1];
                 continuous = [];
                 if (health <= 0) {
                     return -1;
