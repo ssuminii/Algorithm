@@ -6,9 +6,10 @@ function solution(park, routes) {
         'S': [1, 0],
         'N': [-1, 0]
     };
-    
-    for (let i = 0; i < park.length; i++) {
-        for (let j = 0; j < park[i].length; j++) {
+
+    // 시작
+    for (i = 0; i < park.length; i++) {
+        for (j = 0; j < park[i].length; j++) {
             if (park[i][j] === 'S') {
                 array = [i, j];
             }
@@ -16,15 +17,18 @@ function solution(park, routes) {
     }
 
     for (let route of routes) {
-        const [dir, dis] = route.split(' ');
+        const [dir, dis] = route.split(' '); // ['E', '2']
         const [x, y] = direction[dir];
         let newArr = [...array];
+        // console.log(newArr);
+        
         let move = true;
 
-        for (let step = 0; step < Number(dis); step++) {
+        for (i = 0; i < Number(dis); i++) {
             newArr[0] += x;
             newArr[1] += y;
 
+            // 이상한 길
             if (newArr[0] < 0 || newArr[0] >= park.length || 
                 newArr[1] < 0 || newArr[1] >= park[0].length || 
                 park[newArr[0]][newArr[1]] === 'X') {
