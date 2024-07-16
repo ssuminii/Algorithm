@@ -1,3 +1,3 @@
 function solution(n) {
-    return n % Math.sqrt(n) === 0 ? (Math.sqrt(n)+1) * (Math.sqrt(n)+1) : -1 ;
+    return n % Math.sqrt(n) === 0 ? Math.pow(Math.sqrt(n)+1, 2) : -1 ;
 }
