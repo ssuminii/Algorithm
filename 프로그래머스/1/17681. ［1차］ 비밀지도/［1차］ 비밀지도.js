@@ -6,10 +6,10 @@ function solution(n, arr1, arr2) {
 
     
     for(i=0; i<arr1.length; i++) {
-        result.push(Number(arr1[i]) + Number(arr2[i]));
+        result.push(Number(arr1[i]) + Number(arr2[i])); // [112121,211001,110012,11220,12221,111020]
     }
     
-    result = result.map(v => v.toString().padStart(n, '0'));;
+    result = result.map(v => v.toString().padStart(n, '0'));; // ["112121","211001","110012","011220","012221","111020"]
     
-    return result.map(v => [...v.toString()].map(num => num.replaceAll(0, ' ').replaceAll(1, '#').replaceAll(2, '#')).join(''));
+    return result.map(v => [...v.toString()].map(v => v.replaceAll(0, ' ').replaceAll(1, '#').replaceAll(2, '#')).join(''));
 }
