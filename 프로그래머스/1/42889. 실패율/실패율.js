@@ -16,25 +16,14 @@ function solution(N, stages) {
         if (count[i] !== undefined) {
             n = count[i]
         }
-        
-        if (stages.length === 0) {
-            result.push([i, 0]); 
-        } else {
-            let failRate = n / stages.length;
-            result.push([i, failRate]);
-        }
+        let failRate = n / stages.length;
+        result.push([i, failRate]);
         stages.length -= n;
     }
     // [[1,0.125],[2,0.42857142857142855],[3,0.5],[4,0.5],[5,0]
     // [[1,0],[2,0],[3,0],[4,1]]
     
-    result.sort((a, b) => {
-        if (a[1] !== b[1]) {
-            return b[1] - a[1]; 
-        } else {
-            return a[0] - b[0];
-        }
-    });
+    result.sort((a, b) => b[1] - a[1])
     
     return result.map(stage => stage[0]);
 }
