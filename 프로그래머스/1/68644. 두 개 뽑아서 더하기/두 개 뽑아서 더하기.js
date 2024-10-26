@@ -5,6 +5,5 @@ function solution(numbers) {
             result.push([numbers[i], numbers[j]].reduce((a,b) => a + b))
         }
     }
-    result = new Set(result)
-    return [...result].sort((a,b) => a-b)
+    return [...new Set(result)].sort((a,b) => a-b)
 }
