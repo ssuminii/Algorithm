@@ -19,5 +19,5 @@ function solution(s) {
         }
     }
     
-    return otherCount || xCount ? result + 1 : result
+    return xCount ? result + 1 : result
 }
