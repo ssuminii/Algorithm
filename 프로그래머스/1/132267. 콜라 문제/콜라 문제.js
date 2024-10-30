@@ -1,13 +1,12 @@
-// 3, 2, 20
 function solution(a, b, n) {
-    let cokes = [];
+    let cokes = 0;
     
     while(n >= a) {
         let result = ~~(n / a) * b
         let rest = ~~(n % a)
-        cokes.push(result)
+        cokes += result
         n = result + rest
     }
     
-    return cokes.reduce((a,b) => a + b)
+    return cokes
 }
